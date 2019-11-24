@@ -16,13 +16,14 @@ public class numberAdd {
     static int direction = 1; //定义方向，1 为右走，2 为下走， 3 为左走， 4 为上走
 
     public static void main(String[] args) {
-        int[][] arr = new int[5][5];
+        int size = 4;
+        int[][] arr = new int[size][size];
 
         numberadd(arr, 0, 0);
 
         //遍历数组
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
                 System.out.printf(arr[i][j] + "\t");
             }
             System.out.println();
@@ -37,10 +38,10 @@ public class numberAdd {
      */
     public static boolean numberadd(int[][] arr, int i, int j) {
 
-        if (count == 25) {
+        if (count == arr.length * arr.length) {
             return true;
         } else {
-            if (i <= 4 && i >= 0 && j <= 4 && j >= 0 && arr[i][j] == 0) {
+            if (i < arr.length && i >= 0 && j < arr.length && j >= 0 && arr[i][j] == 0) {
                 count++;
                 arr[i][j] = count;
                 if (direction == 1 && numberadd(arr, i, j + 1)) {

@@ -13,7 +13,7 @@ public class RecursionTest {
     public static void test(int n){
         if (n > 2){
             test(n-1);
+            System.out.println("n="+n);
         }
-        System.out.println("n="+n);
     }
 }

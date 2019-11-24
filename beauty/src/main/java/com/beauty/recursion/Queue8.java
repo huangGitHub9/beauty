@@ -9,13 +9,13 @@ public class Queue8 {
 
     static int max = 8; //定义数组大小
     static int[] array = new int[max];
-    static int count = 0;//定义摆法
-    static int checkNo = 0;//定义访问次数
+    static int count = 0; //定义摆法
+    static int checkNo = 0; //定义访问次数
 
     public static void main(String[] args) {
         check(0);
-        System.out.println("总共有"+count+"种摆法");
-        System.out.println("判断皇后位置次数"+checkNo);
+        System.out.println("总共有" + count + "种摆法");
+        System.out.println("判断皇后位置次数" + checkNo);
     }
 
     //回溯和输出正确的摆法

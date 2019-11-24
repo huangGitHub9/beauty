@@ -12,9 +12,22 @@ import java.util.Date;
  */
 public class ShellSort {
     public static void main(String[] args) {
-        int[] arr = {8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
+        //int[] arr = {8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
+        int[] arr = new int[8000000];
+        for (int i = 0; i < 8000000; i++) {
+            arr[i] = (int) (Math.random() * 900000);
+        }
+        Date date1 = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String format1 = simpleDateFormat.format(date1);
+        System.out.println(format1);
+
         shellSort3(arr);
-        System.out.println(Arrays.toString(arr));
+
+        Date date2 = new Date();
+        String format2 = simpleDateFormat.format(date2);
+        System.out.println(format2);
+       // System.out.println(Arrays.toString(arr));
     }
 
     //此种方法为希尔排序中的交换法，也不是最好的，需要优化
@@ -38,7 +51,6 @@ public class ShellSort {
 
     //使用交换法的希尔排序
     public static void shellSort2(int[] arr) {
-
         //增量gap，并不断缩小增量，
         for (int gap = arr.length / 2; gap > 0; gap /= 2) {
             //从gap起，逐个对其所在的组进行插入排序
@@ -60,8 +72,7 @@ public class ShellSort {
     public static void shellSort3(int[] arr) {
         int insertIndex = 0;//定义索引
         int insertVal = 0;//定义索引值
-        for (int gap = arr.length; gap > 0; gap /= 2) {
-
+        for (int gap = arr.length / 2; gap > 0; gap /= 2) {
             for (int i = gap; i < arr.length; i++){
                 insertIndex = i;
                 insertVal = arr[i];
@@ -73,7 +84,6 @@ public class ShellSort {
                     arr[insertIndex] = insertVal;
                 }
             }
-
         }
     }
 }

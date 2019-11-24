@@ -13,8 +13,8 @@ public class InsertSort {
     public static void main(String[] args) {
 //        int[] arr = {3, 9, -1, 8, 0};
 //        System.out.println("排序前 "+ Arrays.toString(arr));
-        int[] arr = new int[80000];
-        for (int i = 0; i < 80000; i++) {
+        int[] arr = new int[8];
+        for (int i = 0; i < 8; i++) {
             arr[i] = (int) (Math.random() * 700000);
         }
         Date date1 = new Date();
@@ -27,7 +27,7 @@ public class InsertSort {
         Date date2 = new Date();
         String format2 = simpleDateFormat.format(date2);
         System.out.println(format2);
-//        System.out.println("排序后 "+ Arrays.toString(arr));
+        System.out.println("排序后 "+ Arrays.toString(arr));
     }
 
     //插入排序方法
@@ -47,4 +47,18 @@ public class InsertSort {
 //            System.out.println(Arrays.toString(arr));
         }
     }
+
+    /*public static void insertSort1(int[] arr){
+        int index = 0;  //下标的索引
+        int value = 0;  //当前需要找位置的值
+        for (int i = 1; i < arr.length; i++){
+            index = i - 1;
+            value = arr[i];
+            while (index >=0 && value < arr[index]){
+                arr[index + 1] = arr[index];
+                index--;
+            }
+            arr[index + 1] = value;
+        }
+    }*/
 }
